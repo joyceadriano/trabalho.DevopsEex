@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="logo.jpeg" alt="Logo" class="logo" />
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Notícias</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Saiba mais</a></li>
+          <li class="search-bar">
+            <input type="text" placeholder="Pesquisar..." />
+          </li>
+          <li>
+            <img
+              src="acessibilidade.jpeg"
+              alt="Acessibilidade"
+              class="access-icon"
+              onclick="toggleAccessibilityOptions()"
+            />
+            <ul id="accessibility-options" class="accessibility-options">
+              <li onclick="increaseFontSize()">Aumentar Fonte</li>
+              <li onclick="toggleContrast()">Contraste</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <img
+              src="usuario.jpeg"
+              alt="User Icon"
+              class="user-icon"
+              onclick="toggleUserOptions()"
+            />
+            <ul id="user-options" class="user-options">
+              <li onclick="logout()">Sair do sistema</li>
+              <li onclick="recoverPassword()">Atualização de senha</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="carousel-container">
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">
+          ❮
+        </button>
+        <div class="carousel">
+          <img src="image1.jpg" alt="Image 1" />
+          <img src="image2.jpg" alt="Image 2" />
+          <img src="image3.jpg" alt="Image 3" />
+          <img src="image4.jpg" alt="Image 4" />
+        </div>
+        <button class="carousel-button next" onclick="moveCarousel(1)">
+          ❯
+        </button>
+      </div>
+
+      <img
+        src="libras.jpeg"
+        alt="Small Image"
+        class="small-image"
+        onclick="showLibrasModal()"
+      />
+      <div id="librasModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLibrasModal()">&times;</span>
+          <p>Acessível em Libras</p>
+          <img src="boneco.jpeg" alt="Imagem Libras" id="librasImage" />
+        </div>
+      </div>
+
+      <div class="names-container">
+        <p>EDUARDA MOREIRA THOMAZ</p>
+        <p>JOYCE ADRIANO DOS SANTOS</p>
+        <p>PAMELA DE OLIVEIRA PEREIRA</p>
+        <p>GABRIEL PAIVA DE ALMEIDA</p>
+        <p>PROFESSORA IARA CARNEVALE - FACULDADE UNIALFA UMUARAMA - 2024</p>
+      </div>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
