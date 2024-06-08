@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="recover-page">
+        <div class="recover-container">
+            <h2>Recuperar Senha</h2>
+            <form id="recover-form" class="recover-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Recuperar Senha</button>
+                <br>
+                <button type="button" id="cancel-button">Cancelar</button>
+            </form>
+            <p id="message" style="display: none;">Recuperação de senha enviada para o email!</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('recover-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('message').style.display = 'block';
+            event.target.querySelector('button').style.display = 'none';
+        });
+
+        document.getElementById('cancel-button').addEventListener('click', function() {
+ window.location.href = 'index.html';
+ });
+    </script>
+</body>
+</html>
