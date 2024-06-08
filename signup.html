@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signup-page">
+        <div class="signup-container">
+            <h2>Cadastro</h2>
+            <form id="signup-form" class="signup-form">
+                <label for="fullname">Nome Completo:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm-password">Confirmação de Senha:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">Confirmar</button>
+                <button type="button" id="cancel-button">Cancelar</button>
+            </form>
+            <p id="message" style="display: none;"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const messageElement = document.getElementById('message');
+
+            if (!email.includes('@')) {
+                messageElement.textContent = 'E-mail inválido';
+                messageElement.style.color = 'red';
+            } else if (password !== confirmPassword) {
+                messageElement.textContent = 'As senhas não combinam!';
+                messageElement.style.color = 'red';
+            } else {
+                messageElement.textContent = 'Concluído com sucesso!';
+                messageElement.style.color = 'green';
+                document.getElementById('signup-form').reset();
+            }
+
+            messageElement.style.display = 'block';
+        });
+
+        document.getElementById('cancel-button').addEventListener('click', function() {
+ window.location.href = 'index.html';
+ });
+    </script>
+</body>
+</html>
